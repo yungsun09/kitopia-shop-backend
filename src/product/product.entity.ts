@@ -89,6 +89,9 @@ export class Sku {
   @Column()
   stock: number;
 
+  @Column({ length: 50 })
+  remark: string; 
+
   // SKU与属性值是多对多关系
   @ManyToMany(() => AttributeValue)
   @JoinTable()

@@ -23,10 +23,6 @@ export class CreateSkuDto {
   @Min(0)
   stock: number;
 
-  @IsArray()
-  @ValidateNested({ each: true })
-  @Type(() => CreateAttributeValueDto)
-  attributeValues: CreateAttributeValueDto[];
 }
 
 export class CreateProductDto {
@@ -37,8 +33,6 @@ export class CreateProductDto {
   @IsString()
   description: string;
 
-  @IsArray()
-  @ValidateNested({ each: true })
-  @Type(() => CreateSkuDto)
-  skus: CreateSkuDto[];
+  @IsString()
+  coverUrl: string;
 }
